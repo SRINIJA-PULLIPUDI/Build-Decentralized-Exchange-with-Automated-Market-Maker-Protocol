@@ -76,7 +76,7 @@ Liquidity providers receive LP tokens proportional to their share of the pool.
 1. Clone the repository:
 ```bash
 git clone https://github.com/SRINIJA-PULLIPUDI/Build-Decentralized-Exchange-with-Automated-Market-Maker-Protocol.git
-cd dex-amm
+cd Build-Decentralized-Exchange-with-Automated-Market-Maker-Protocol
 ```
 
 2. Start Docker environment:
