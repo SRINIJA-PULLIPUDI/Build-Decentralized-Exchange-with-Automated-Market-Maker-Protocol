@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/DEX.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> DEX.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.84% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>21/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+&nbsp;
+contract DEX is ReentrancyGuard {
+    using SafeERC20 for IERC20;
+&nbsp;
+    address public tokenA;
+    address public tokenB;
+&nbsp;
+    uint256 public reserveA;
+    uint256 public reserveB;
+&nbsp;
+    uint256 public totalLiquidity;
+    mapping(address =&gt; uint256) public liquidity;
+&nbsp;
+    event LiquidityAdded(address indexed provider, uint256 amountA, uint256 amountB, uint256 liquidityMinted);
+    event LiquidityRemoved(address indexed provider, uint256 amountA, uint256 amountB, uint256 liquidityBurned);
+    event Swap(address indexed trader, address indexed tokenIn, address indexed tokenOut, uint256 amountIn, uint256 amountOut);
+&nbsp;
+    constructor(address _tokenA, address _tokenB) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_tokenA != _tokenB, "IDENTICAL_TOKENS");
+        tokenA = _tokenA;
+        tokenB = _tokenB;
+    }
+&nbsp;
+    function addLiquidity(uint256 amountA, uint256 amountB) external <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant returns (uint256 liquidityMinted) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amountA &gt; 0 &amp;&amp; amountB &gt; 0, "ZERO_AMOUNT");
+&nbsp;
+        IERC20(tokenA).safeTransferFrom(msg.sender, address(this), amountA);
+        IERC20(tokenB).safeTransferFrom(msg.sender, address(this), amountB);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (totalLiquidity == 0) {
+            liquidityMinted = sqrt(amountA * amountB);
+        } else {
+<span class="cstat-no" title="statement not covered" >            require(reserveA * amountB == reserveB * amountA, "BAD_RATIO")</span>;
+            liquidityMinted = (amountA * totalLiquidity) / reserveA;
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(liquidityMinted &gt; 0, "ZERO_LIQUIDITY");
+&nbsp;
+        liquidity[msg.sender] += liquidityMinted;
+        totalLiquidity += liquidityMinted;
+&nbsp;
+        reserveA += amountA;
+        reserveB += amountB;
+&nbsp;
+        emit LiquidityAdded(msg.sender, amountA, amountB, liquidityMinted);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function removeLiquidity(uint256 liquidityAmount) external nonReentrant returns (uint256 amountA, uint256 amountB) {</span>
+<span class="cstat-no" title="statement not covered" >        require(liquidityAmount &gt; 0, "ZERO_AMOUNT")</span>;
+<span class="cstat-no" title="statement not covered" >        require(liquidity[msg.sender] &gt;= liquidityAmount, "NOT_ENOUGH_LP")</span>;
+&nbsp;
+        amountA = (liquidityAmount * reserveA) / totalLiquidity;
+        amountB = (liquidityAmount * reserveB) / totalLiquidity;
+&nbsp;
+        liquidity[msg.sender] -= liquidityAmount;
+        totalLiquidity -= liquidityAmount;
+&nbsp;
+        reserveA -= amountA;
+        reserveB -= amountB;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenA).safeTransfer(msg.sender, amountA)</span>;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenB).safeTransfer(msg.sender, amountB)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit LiquidityRemoved(msg.sender, amountA, amountB, liquidityAmount);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function swapAForB(uint256 amountAIn) external nonReentrant returns (uint256 amountBOut) {</span>
+<span class="cstat-no" title="statement not covered" >        require(amountAIn &gt; 0, "ZERO_SWAP")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenA).safeTransferFrom(msg.sender, address(this), amountAIn)</span>;
+&nbsp;
+        amountBOut = getAmountOut(amountAIn, reserveA, reserveB);
+&nbsp;
+        reserveA += amountAIn;
+        reserveB -= amountBOut;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenB).safeTransfer(msg.sender, amountBOut)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Swap(msg.sender, tokenA, tokenB, amountAIn, amountBOut);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function swapBForA(uint256 amountBIn) external nonReentrant returns (uint256 amountAOut) {</span>
+<span class="cstat-no" title="statement not covered" >        require(amountBIn &gt; 0, "ZERO_SWAP")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenB).safeTransferFrom(msg.sender, address(this), amountBIn)</span>;
+&nbsp;
+        amountAOut = getAmountOut(amountBIn, reserveB, reserveA);
+&nbsp;
+        reserveB += amountBIn;
+        reserveA -= amountAOut;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20(tokenA).safeTransfer(msg.sender, amountAOut)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Swap(msg.sender, tokenB, tokenA, amountBIn, amountAOut);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getPrice() external view returns (uint256 price) {</span>
+<span class="cstat-no" title="statement not covered" >        if (reserveA == 0) <span class="cstat-no" title="statement not covered" >return 0;</span></span>
+<span class="cstat-no" title="statement not covered" >        return reserveB / reserveA;</span>
+    }
+&nbsp;
+    function getReserves() external view returns (uint256 _reserveA, uint256 _reserveB) {
+        return (reserveA, reserveB);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut)</span>
+        public pure returns (uint256 amountOut)
+    {
+<span class="cstat-no" title="statement not covered" >        require(amountIn &gt; 0, "ZERO_IN")</span>;
+<span class="cstat-no" title="statement not covered" >        require(reserveIn &gt; 0 &amp;&amp; reserveOut &gt; 0, "NO_LIQ")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 amountInWithFee = amountIn * 997;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 numerator = amountInWithFee * reserveOut;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 denominator = (reserveIn * 1000) + amountInWithFee;</span>
+        amountOut = numerator / denominator;
+    }
+&nbsp;
+    function sqrt(uint256 y) internal pure returns (uint256 z) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (y &gt; 3) {
+            z = y;
+            uint256 x = y / 2 + 1;
+            while (x &lt; z) {
+                z = x;
+                x = (y / x + x) / 2;
+            }
+        } else <span class="cstat-no" title="statement not covered" >if (y != 0) {</span>
+            z = 1;
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 03 2026 13:23:15 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
